@@ -1,20 +1,21 @@
 import React from "react";
-import {HashRouter as Router, Switch, Route, NavLink } from 'react-router-dom';
+import { NavLink, } from "react-router-dom";
 
-class Header extends React.Component {
-  
+import "./header.css";
+
+class Header extends React.Component {  
   render() {
     return (
       <nav>
         <ul className="menu">
           <li>
-            <NavLink to="">Category1</NavLink>
+            <NavLink to="/news" activeClassName="active">news</NavLink>
           </li>
           <li>
-            <NavLink to="">Category2</NavLink>
+            <NavLink to="/news/10" activeClassName="active">news</NavLink>
           </li>
           <li>
-            <NavLink to="">Category3</NavLink>
+            <NavLink to="/topics" activeClassName="active">topics</NavLink>
           </li>
         </ul>
       </nav>

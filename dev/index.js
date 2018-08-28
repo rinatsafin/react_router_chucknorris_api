@@ -1,9 +1,42 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter as Router, Switch, Route, } from "react-router-dom";
 
-import Header from './components/Header';
-import App from "./components/App";
-import routerSettings from "./router";
+import Header from "./components/Header";
+//import App from "./components/App"
+//import { routersSettings, NotFound, } from "./routers";
+
+const Home = () => <h1>Home</h1>;
+const News = () => <h1>News</h1>;
+const Topics = () => <h1>Topics</h1>;
+const NotFound = () => <h1>404</h1>;
+
+const routersSettings = [
+  {
+    id: 1,
+    url: "/",
+    component: Home,
+    exact: true,
+  },
+  {
+    id: 2,
+    url: "/news",
+    component: News,
+    exact: true,
+  },
+  {
+    id: 3,
+    url: "/news/:newsId",
+    component: News,
+    exact: false,
+  },
+  {
+    id: 4,
+    url: "/topics",
+    component: Topics,
+    exact: false,
+  },
+];
 
 // Работаем с роутером и api:
 
@@ -21,7 +54,15 @@ ReactDOM.render(
   <Router>
     <div>
       <Header />
-      <App />
+      <Switch>
+        {
+          routersSettings.map(route => (
+            <Route key={route.id} path={route.url} exact={route.exact} component={route.component} />
+          ))
+        }
+        <Route path="*" component={NotFound} />
+      </Switch>
+      {/* <App /> */}
     </div>
   </Router>,
   document.getElementById("app")
