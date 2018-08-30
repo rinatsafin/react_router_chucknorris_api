@@ -1,13 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Switch, Route, } from "react-router-dom";
+import { HashRouter as Router, Switch, Route, } from "react-router-dom";
 
+import News from "./containers/News";
 import Header from "./components/Header";
 //import App from "./components/App"
 //import { routersSettings, NotFound, } from "./routers";
 
 const Home = () => <h1>Home</h1>;
-const News = () => <h1>News</h1>;
 const Topics = () => <h1>Topics</h1>;
 const NotFound = () => <h1>404</h1>;
 

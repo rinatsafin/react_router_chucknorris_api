@@ -1,4 +1,4 @@
-# Notes usign react + redux
+# React Router with Chuknoris API
 
 ## Development
 

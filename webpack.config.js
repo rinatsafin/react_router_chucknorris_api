@@ -49,32 +49,32 @@ module.exports = {
           },
         }),
       },
-      {
-        test: /\.scss$/,
-        exclude: /node_modules/,
-        use: extractCSS.extract({
-          fallback: "style-loader",
-          //resolve-url-loader may be chained before sass-loader if necessary
-          use: [
-            {
-              loader: "css-loader",
-              options: {
-                sourceMap: true,
-                modules: true,
-                localIdentName: devMode ? "[name]__[local]__[hash:base64:5]" : "[hash:base64:12]",
-              },
-            },
-            {
-              loader: "sass-loader",
-              options: {
-                sourceMap: true,
-                modules: true,
-                localIdentName: devMode ? "[name]__[local]__[hash:base64:5]" : "[hash:base64:12]",
-              },
-            },
-          ],
-        }),
-      },
+      // {
+      //   test: /\.scss$/,
+      //   exclude: /node_modules/,
+      //   use: extractCSS.extract({
+      //     fallback: "style-loader",
+      //     //resolve-url-loader may be chained before sass-loader if necessary
+      //     use: [
+      //       {
+      //         loader: "css-loader",
+      //         options: {
+      //           sourceMap: true,
+      //           modules: true,
+      //           localIdentName: devMode ? "[name]__[local]__[hash:base64:5]" : "[hash:base64:12]",
+      //         },
+      //       },
+      //       {
+      //         loader: "sass-loader",
+      //         options: {
+      //           sourceMap: true,
+      //           modules: true,
+      //           localIdentName: devMode ? "[name]__[local]__[hash:base64:5]" : "[hash:base64:12]",
+      //         },
+      //       },
+      //     ],
+      //   }),
+      // },
       {
         test: /\.(png|jpg|gif)$/,
         use: [
@@ -104,7 +104,7 @@ module.exports = {
       //     'sass-loader',
       //   ],
       // },
-    ]
+    ],
   },
   plugins: [
     extractCSS,
