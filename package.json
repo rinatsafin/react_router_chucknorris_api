@@ -1,7 +1,7 @@
 {
   "name": "react_router_chucknorris_api",
   "version": "1.0.0",
-  "description": "Notes using react + redux",
+  "description": "React Router & Chuck Norris API",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,19 +10,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+git@github.com:rinatsafin/notes_react_redux.git"
+    "url": "git+git@github.com:rinatsafin/react_router_chucknorris_api.git"
   },
   "keywords": [
-    "todo",
+    "chuck",
+    "norris",
     "react",
-    "redux"
+    "router"
   ],
   "author": "Rinat Safin",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/rinatsafin/notes_react_redu/issues"
+    "url": "https://github.com/rinatsafin/react_router_chucknorris_api/issues"
   },
-  "homepage": "https://github.com/rinatsafin/notes_react_redux#readme",
+  "homepage": "https://github.com/rinatsafin/react_router_chucknorris_api#readme",
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.6",
@@ -53,12 +54,9 @@
     "webpack-dev-server": "^3.1.5"
   },
   "dependencies": {
-    "history": "^4.7.2",
     "prop-types": "^15.6.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "react-redux": "^5.0.7",
-    "react-router-dom": "^4.3.1",
-    "redux": "^4.0.0"
+    "react-router-dom": "^4.3.1"
   }
 }
