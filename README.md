@@ -1,4 +1,4 @@
-# React Router with Chuk Norris API
+# React Router with Chuck Norris API
 
 ## Development
 
