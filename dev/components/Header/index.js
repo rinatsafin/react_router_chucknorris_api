@@ -57,7 +57,7 @@ class Header extends React.Component {
               </ul>
             ) : (
               <div>
-                <div>Loading categories...</div>
+                <h1 className={styles.text_center}>Loading categories...</h1>
                 <Loader />
               </div>
             )
