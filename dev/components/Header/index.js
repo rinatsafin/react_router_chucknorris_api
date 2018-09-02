@@ -3,10 +3,8 @@ import { NavLink, } from "react-router-dom";
 
 import Loader from "../Loader";
 import logo from "./images/logo.png";
+import { API_URL_CAT, } from "../../constants";
 import styles from "./header.css";
-
-//const API_URL_RANDOM_JOKE = "https://api.chucknorris.io/jokes/random";
-const API_GET_CATEGORIES_URL = "https://api.chucknorris.io/jokes/categories";
 
 class Header extends React.Component {
   constructor() {
@@ -21,7 +19,7 @@ class Header extends React.Component {
   }
 
   getCategory() {
-    fetch(API_GET_CATEGORIES_URL)
+    fetch(API_URL_CAT)
       .then(response => response.json())
       .then((response) => {
         this.setState({
@@ -38,19 +36,32 @@ class Header extends React.Component {
   render() {
     const { categories, } = this.state;
     return (
-      <header>
-        <img className={styles.logo} src={logo} alt="Chuck norris logo" />
-        <h1>Get Jokes with chucknorris.io</h1>
+      <header className={styles.header}>
+        <div className={styles.wrap_logo}>
+          <NavLink to="/" className={styles.logo_link}>
+            <img className={styles.logo} src={logo} alt="logo" />
+          </NavLink>
+        </div>
+        <h1 className={styles.title}>Jokes with chucknorris.io</h1>
+        <h2>Retrieve a random chuck norris joke from a given category</h2>
         <nav>
-          <ul className="menu">
-            { categories.length ? (
-              categories.map(cat => (<li key={Date.now()}><NavLink to={`/${cat}`} activeClassName="active">{cat}</NavLink></li>))
+          { 
+            categories.length ? (
+              <ul className={styles.menu}>
+                <li>
+                  <NavLink className={styles.home_link} to="/" replace>Home</NavLink>
+                </li>
+                {
+                  categories.map(cat => (<li key={cat}><NavLink to={`/category/${cat}`} replace>{cat}</NavLink></li>))
+                }
+              </ul>
             ) : (
-              <li>
-                <NavLink to="/news" activeClassName="active">news</NavLink>
-              </li>
-            )}
-          </ul>
+              <div>
+                <div>Loading categories...</div>
+                <Loader />
+              </div>
+            )
+          }
         </nav>
       </header>
     )

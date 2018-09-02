@@ -1,0 +1,45 @@
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.text_center {
+  text-align: center;  
+}
+
+.joke_wrap {
+  width: 50%;
+  margin: 0 auto;
+  border: 4px solid turquoise;
+  border-radius: 5px;
+  background: #fff;
+}
+
+.img,
+.text {
+  padding: 10px;
+}
+
+.text {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.link {
+  display: inline-block;
+  margin: 0 20px;
+}
+
+.link:hover {
+  text-decoration: none;
+}
+
+.joke_wrap {
+  overflow: auto
+}
+
+.joke_wrap::after {
+  content: "";
+  clear: both;
+  display: table;
+}
