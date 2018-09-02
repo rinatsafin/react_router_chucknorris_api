@@ -38,7 +38,7 @@ class Header extends React.Component {
     return (
       <header className={styles.header}>
         <div className={styles.wrap_logo}>
-          <NavLink to="/" className={styles.logo_link}>
+          <NavLink to="/" className={styles.logo_link} replace>
             <img className={styles.logo} src={logo} alt="logo" />
           </NavLink>
         </div>
